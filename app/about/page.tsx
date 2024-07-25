@@ -15,7 +15,7 @@ export default function Page() {
     <>
       <AuthorLayout content={mainContent}>
         <MDXLayoutRenderer code={author.body.code} />
-        <div className='my-3 font-bold text-4xl '> Work Experience</div>
+        <div className='my-3 font-bold text-4xl underline hover:underline-offset-1'> Work Experience</div>
         <div className='flex justify-center my-1' >
           <TimeLine timelineItems={timelineData} />
         </div>
