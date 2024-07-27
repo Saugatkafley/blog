@@ -19,7 +19,7 @@ const Skills = ({ programmingLanguages, frameworks, tools }: {
         <div>Programming Languages</div>
         <div className="flex flex-wrap flex-auto">
             {programmingLanguages.map((name) => (
-                <SkillItem key={name} name={name} className="mr-2 mb-2" />
+                <SkillItem key={name} name={name}/>
             ))}
         </div>
         <div>Frameworks</div>
