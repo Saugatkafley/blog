@@ -10,7 +10,7 @@ import {
   Threads,
   Instagram,
   Kaggle,
-  HuggingFace
+  HuggingFace,
 } from './icons'
 
 const components = {
@@ -25,7 +25,7 @@ const components = {
   threads: Threads,
   instagram: Instagram,
   kaggle: Kaggle,
-  huggingface: HuggingFace
+  huggingface: HuggingFace,
 }
 
 type SocialIconProps = {
