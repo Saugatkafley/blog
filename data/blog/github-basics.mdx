@@ -1,0 +1,93 @@
+---
+title: 'Git/GitHub Guide'
+date: '2024-07-27'
+tags: ['github', 'guide']
+draft: false
+summary: 'A simple intro to Git and GitHub. How to manage repos, commit conventions, PRs and stuffs.'
+layout: PostLayout
+---
+
+## What is Git/GitHub?
+- Git is a version control system that tracks changes in computer files and specifically designed for coordinating work among programmers collaboratively developing source code.
+- GitHub is a cloud-based platform for storing, versioning, and collaborating on code. It uses Git for the underlying version control system.
+
+## Getting Started 
+Check if it is already installed.
+```bash
+git --version
+```
+If it shows some version then we are good to go. Otherwise, you can install it on your Linux machine with this following command:
+
+```bash
+# If you are on Ubuntu.
+sudo apt install git-all
+# If you are on Fedora.
+sudo dnf install git-all
+```
+For macoS and Windows see [Getting Started - Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+## Basic Git Workflow
+- Create a new repository:`git init`: Initializes a new Git repository in the current directory.
+- Stage changes:`git add` : Adds specified files to the staging area.
+- Commit changes:`git commit -m "Commit message"`: Commits staged changes with a descriptive message.
+- Push changes to remote:`git push origin <branch>`: Pushes commits to a remote repository.
+- Pull changes from remote:`git pull origin <branch>`: Pulls commits from a remote repository.
+- Create a new branch:`git checkout -b <branch>`. 
+- Delete a branch:`git branch -d <branch>`.
+- Checkout to a branch `git checkout <branch>`.
+- Stash changes:`git stash`: Saves the current state of your working directory to a stash.
+- Fetch changes:`git fetch`: Fetches changes from a remote repository.It does not affect your local files only the heads are updated.
+
+## Branching and stuffs
+
+When working on a project with a team, using different branches in Git is very useful. Think of a branch as a separate workspace where you can make changes without affecting the main codebase. By default, we work on the main branch, but when we start developing new features or fixing bugs, it's a good idea to create separate branches for each task.
+
+To start working on a new feature, we create a new branch and switch to it using the checkout command. This way, we can make all our changes in this new branch without disturbing the main branch. Once we are done with our changes, we create a Pull Request (PR) to merge our changes back into the main branch.
+
+Merging is the process of combining the changes from one branch into another. When our feature is ready and tested, we merge it into the main branch. This ensures that the main branch always has the latest and most stable code.
+
+1. Create a new branch: `git checkout -b <branch>`
+2. Work on your changes: `git commit -m "Commit message"`
+3. Push changes to remote: `git push origin -u <branch>`: Here `-u` argument is used to set upstream for git.
+4. Merge the branch: After the PR is reviewed and approved, merge it into the main branch.
+5. Switch back to the main branch: `git checkout main` and `git pull origin main` makes sure you have latest update.
+
+## Git Commit Types:
+| Commit Type | Title                    | Description                                                                                                 | Emoji |
+|-------------|--------------------------|-------------------------------------------------------------------------------------------------------------|-------|
+| feat        | Features                 | A new feature                                                                                               | ✨     |
+| fix         | Bug Fixes                | A bug Fix                                                                                                   | 🐛     |
+| docs        | Documentation            | Documentation only changes                                                                                  | 📚     |
+| style       | Styles                   | Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)      | 💎     |
+| refactor    | Code Refactoring         | A code change that neither fixes a bug nor adds a feature                                                   | 📦     |
+| perf        | Performance Improvements | A code change that improves performance                                                                     | 🚀     |
+| test        | Tests                    | Adding missing tests or correcting existing tests                                                           | 🚨     |
+| build       | Builds                   | Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)         | 🛠     |
+| ci          | Continuous Integrations  | Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) | ⚙️     |
+| chore       | Chores                   | Other changes that don't modify src or test files                                                           | ♻️     |
+| revert      | Reverts                  | Reverts a previous commit                                                                                   | 🗑     |
+
+Examples:
+
+```bash
+# feat commit
+git commit -m "feat: Add new feature"
+#fix commit
+git commit -m "fix(api): Fix bug"
+...
+```
+The scope `() / []` provides additional contextual information.
+
+## Issuses, Pull Requests
+- `Issues` are a way to discuss and track problems, feature requests, or other topics related to a project.
+- `Pull Requests (PRs)` are the way to propose changes to a project. They allow you to collaborate with others on a project. When a contributor wants to make a change to a project, they can do so by creating a new branch, making the changes, and then submitting a PR. After the PR is submitted, other contributors can review the changes and provide feedback. Once the changes have been reviewed and approved, they can be merged into the main branch of the project.
+
+## Advanced (GitHub Actions/ CICD)
+- `Continuous Integration (CI)`: CI is a practice where developers frequently merge their code changes into a central repository. Automated tests and builds are run to catch issues early, ensuring that the code is always in a releasable state.
+- `Continuous Delivery (CD)`: CD extends CI by automatically deploying all code changes to a testing environment and, potentially, to production. It ensures that the software can be released reliably at any time.
+
+- `GitHub Actions`: GitHub Actions is a CI/CD tool provided by GitHub. It allows you to automate workflows directly within your GitHub repository. You can define workflows using YAML files, specifying when to trigger them (e.g., on push, pull request) and what steps to execute (e.g., run tests, deploy code).
+
+# Conclusion
+
+Happy coding!
