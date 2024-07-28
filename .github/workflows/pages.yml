@@ -45,6 +45,7 @@ jobs:
           NEXT_PUBLIC_GISCUS_CATEGORY_ID: ${{ secrets.NEXT_PUBLIC_GISCUS_CATEGORY_ID }}
           EMAILOCTOPUS_API_KEY: ${{ secrets.EMAILOCTOPUS_API_KEY }}
           EMAILOCTOPUS_LIST_ID: ${{ secrets.EMAILOCTOPUS_LIST_ID }}
+          NEXT_UMAMI_ID: ${{ secrets.NEXT_UMAMI_ID }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
