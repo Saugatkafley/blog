@@ -8,7 +8,7 @@ const siteMetadata = {
   theme: 'system', // system, dark or light
   siteUrl: 'https://saugatkafley.com.np',
   siteRepo: 'https://github.com/Saugatkafley/blog',
-  siteLogo: '/static/images/algo.png',
+  siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
   mastodon: 'https://mastodon.social/@mastodonuser',
   email: 'saugatkafley@gmail.com',
